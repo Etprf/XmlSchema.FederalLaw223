@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Authors>ETP LLC,Anton Gerasimov,un-tone</Authors>
+    <Company>ETP LLC</Company>
+    <Description>XML schema classes for zakupki.gov.ru 223 federal law entities.</Description>
+    <Copyright>ETP LLC 2020 | All rights reserved</Copyright>
+    <RepositoryUrl>https://github.com/Etprf/XmlSchema.FederalLaw223</RepositoryUrl>
+    <PackageReleaseNotes>Public schema version 10.1</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>
