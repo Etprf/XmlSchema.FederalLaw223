@@ -1,5 +1,7 @@
 # XmlSchema.FederalLaw223
 
+![NuGet](https://github.com/Etprf/XmlSchema.FederalLaw223/workflows/NuGet/badge.svg)
+
 The library contains XML schema classes for zakupki.gov.ru 223 federal law entities. Distributed as a NuGet package.
 
 ## Development

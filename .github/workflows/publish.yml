@@ -1,11 +1,11 @@
-name: package delivery
+name: NuGet
 
 on:
   push:
     branches: [master]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
