@@ -1,0 +1,25 @@
+name: package delivery
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.200
+      - name: Pack
+        run: dotnet pack ./src/XmlSchema.FederalLaw223.csproj -c Release -o .
+      - name: Push to GitHub Packages
+        uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+        with:
+          nupkg-path: ./*.nupkg
+          repo-owner: un-tone
+          gh-user: un-tone
+          token: ${{ secrets.GITHUB_TOKEN }}
