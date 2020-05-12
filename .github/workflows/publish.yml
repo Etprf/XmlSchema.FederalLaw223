@@ -3,6 +3,8 @@ name: NuGet
 on:
   push:
     branches: [master]
+    tags:
+      - "v*"
 
 jobs:
   publish:
@@ -20,6 +22,16 @@ jobs:
         uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
         with:
           nupkg-path: ./*.nupkg
-          repo-owner: un-tone
+          repo-owner: etprf
           gh-user: un-tone
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+          skip-duplicate: false # remove it
